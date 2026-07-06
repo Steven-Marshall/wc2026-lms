@@ -32,25 +32,24 @@ USA ×1 (Mr T), Mexico ×1 (Andy W). Fair share = 12.5%.
   leads on his stronger kept hand); Hasan halved to ~11.7% (mid); breakaways Mr T ~7% / Andy W
   ~6.5% at the bottom, still needing to win their coin-flip ties.
 
-Model = deterministic best-play, constrained by each player's used-list (divergence
-is STRUCTURAL — what you have left to play — not random noise).
-| Player | R16 pick | Spent early | Survive | EV |
+CURRENT standings — R16 half-played (Morocco/France/Norway/England through; Spain/USA/
+Argentina/Colombia ties pending). Engine: save-aware assignment continuation policy,
+market R16 prices locked, moderate rival plan-divergence. 7 alive, fair share 14.3%.
+| Player | R16 pick | Spent early | Survive R16 | EV |
 |--|--|--|--|--|
-| **Hasan** | Argentina | USA | 83.5% | **22.1%** (clear best) |
-| Mr T | USA | Egypt | 49% | 12.4% |
-| Malley | Morocco | Belgium | 72.5% | 11.2% |
-| Conrad/Andrea | Morocco | England | 72.5% | 11.1% |
-| Huw | Morocco | USA | 72.5% | 11.1% |
-| Andy W | Mexico | Argentina | 45.6% | 10.6% |
-| Matty | Morocco | Argentina | 72.5% | 10.3% |
-Key insights: (1) Hasan's Argentina is best — safe AND differentiated (a save the
-board called a sin, but the herd flips it). (2) Within the identical-pick Morocco herd,
-EV tracks the QUALITY of what you've kept: Malley (spent weak Belgium) > Matty (spent
-Argentina, can't cash the likely champion at the final). The R32 cardinal-sin echoes
-forward. Equity = survival AND strength of remaining hand. (QF+ is market-anchored via
-the reach-semi/final/win odds through calibration — NOT guessed; only residual wrinkle is
-a single strength can't perfectly fit match-odds AND reach-odds at once. Direct QF match
-prices don't exist until R16 resolves.)
+| **Malley** | Morocco | Belgium | 99.9% | **17.4%** (best hand) |
+| Huw | Morocco | USA | 99.9% | 17.2% |
+| Matty | Morocco | Argentina | 99.9% | 15.6% |
+| Conrad/Andrea | Morocco | England | 99.9% | 14.1% (worst of herd) |
+| Hasan | Argentina (pending) | USA | 84.9% | 13.1% |
+| Mr T | USA (pending) | Egypt | 52.9% | 8.5% |
+Key insights: (1) Morocco holding neutralised the contrarians — Hasan from pre-round
+hero to mid-pack, Mr T clinging to a coin-flip. (2) Within the safe herd, EV = QUALITY OF
+HAND KEPT: Malley/Huw (spent weak Belgium/USA) lead; Conrad/Andrea (burned England, now a
+red-hot 3rd favourite) are WORST — England's rise made that the costliest burn. (3) The
+within-herd order is genuinely correlation-dependent: pure-optimal rivals reward the forced
+differentiator (Matty), realistic divergence rewards the best hand (Malley) — tier structure
+robust either way. Model = save-aware assignment policy (lms/ev.py, feature branch).
 
 ## R32 results (live)
 Completed (12 of 16). Pool picks in **bold**:
