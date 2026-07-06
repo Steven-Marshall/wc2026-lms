@@ -4,8 +4,11 @@ A simulator for a knockout-stage Last-Man-Standing pool. From the **Round of 32*
 you pick one team per round; the team must **win** to keep you alive; you may
 **never repick** a team. Five rounds: **R32 → R16 → QF → SF → Final**.
 
+> **Live commentary:** [`data/picks.md`](data/picks.md) is the running pick tracker
+> + EV analysis for the actual pool as the 2026 knockouts play out.
+
 ### Our pool's specifics
-- **~15 players** enter the knockout (started ~20; qualifying-stage upsets thinned it).
+- **11 players** entered the knockout (of ~20 who started; qualifying upsets thinned it).
 - **Reset at the last 32** — group-stage picks don't carry over, so everyone
   starts the knockout with an empty used-list (no team burn).
 - **Single fixed pot.** It goes to whoever survives longest; split equally if
@@ -27,10 +30,10 @@ only pay if every other survivor also goes out in the same round.
 
 ## Quick start
 ```
-python data/_generate_dummy.py   # (re)generate consistent DUMMY data
-python run.py                     # calibrate -> Monte-Carlo -> compare strategies
-python pick.py --used England,Brazil   # per-stage pick helper (the main tool)
-python tests/test_odds.py         # sanity tests
+python data/sheet_to_json.py   # build engine JSON from the editable data/teams.txt
+python pick.py                 # per-stage harvest table + recommended pick
+python ev_field.py             # current EV standings for the live pool
+python tests/test_odds.py      # sanity tests
 ```
 Pure standard library — no pip installs needed.
 
@@ -71,22 +74,33 @@ a genuine semi-final contender early; those are the teams you're saving.
   total (win→1, reach_final→2, reach_semi→4, each match→1). Totals are
   stage-invariant (always 1 champion, 2 finalists, 4 semi-finalists).
 
-Both files currently hold **dummy** data. Overwrite once the real R32 is set.
+The live data now holds the **real WC2026 knockout**. `data/teams.txt` is a simple
+human-edited sheet (one team per line, in bracket order, with the four prices);
+`python data/sheet_to_json.py` converts it to the JSON the engine reads. A
+half-played round is handled too — decided ties are locked, pending ties priced,
+eliminated teams zeroed.
 
 ## How it works
 1. **`lms/odds.py`** — decimal odds → vig-free probabilities.
 2. **`lms/bracket.py`** — exact reach-probabilities for the bracket (also fills
    in reach-QF / reach-R16, which the markets don't quote). Works at any size.
 3. **`lms/calibrate.py`** — fits one Bradley-Terry strength per team so the exact
-   reach-probs match whichever market markers are available.
+   reach-probs match the market markers (real match prices folded in as hard
+   first-round constraints).
 4. **`lms/simulate.py`** — Monte-Carlo: samples whole tournaments.
 5. **`lms/strategy.py`** — pick policies + the no-repick / stranded rules.
-6. **`lms/evaluate.py`** — survival distribution per policy.
-7. **`pick.py`** — per-stage harvest table + recommendation (the day-to-day tool).
+6. **`lms/ev.py`** — the EV/rival engine: models every player's used-list picking
+   to the final under a **save-aware assignment policy** (reserve the champion for
+   the final, harvest weak-safe teams early), splits the pot among the furthest
+   survivors, and returns each player's expected pot share.
+7. **`pick.py`** — per-stage harvest table + recommendation (day-to-day tool).
+8. **`ev_field.py`** — current EV standings for the live pool; **`ev_run.py`** —
+   compares candidate picks / contrarian plays against the field.
+9. **`data/sheet_to_json.py`** — turns the editable `teams.txt` into engine JSON.
 
-## Expected value & opponents (the late-game brain — DESIGNED, NOT BUILT)
-Survival vs EV differ because of pot-sharing. Findings to implement when the
-field thins (~QF/SF, down to a handful of players):
+## Expected value & opponents (the late-game brain — BUILT, `lms/ev.py`)
+Survival vs EV differ because of pot-sharing. The engine below switches on once
+the field thins (~QF/SF, down to a handful of players):
 
 **Why EV is dormant early, decisive late.** With many players you'll share
 regardless, and constraints start identical (reset) and diverge only slowly.
@@ -127,17 +141,23 @@ favourite-rider / wildcard), Monte-Carlo the tournament *and* everyone's picks
 together, find the furthest-surviving group per world, and average your share to
 an EV per candidate strategy.
 
-## Roadmap / TODO
-- [ ] **Final-round EV calculator** in `pick.py`: feed the two finalists' odds +
-      which rivals can still pick which (from history) → EV of each pick, count of
-      rivals stuck on the favourite, and the `1/N` recommendation.
-- [ ] **EV mode**: rival-pick model calibrated to visible history; switch from
-      survival to expected value once the field is small; flag when EV diverges
-      from pure survival.
-- [ ] Smarter calibration (proper optimiser; use `match` odds as hard constraints).
-- [ ] Quadrant-aware backward-induction policy (the current `planned_assignment`
-      over-reserves teams that get eliminated by quadrant rivals).
+## Done / roadmap
+- [x] Harvest pick helper (`pick.py`) + Monte-Carlo strategy comparison.
+- [x] EV/rival engine with pot-sharing (`lms/ev.py`, `ev_field.py`, `ev_run.py`).
+- [x] Market match prices folded into calibration (fixes strong-but-trapped teams).
+- [x] Half-played-round support (lock decided ties, price pending, zero eliminated).
+- [x] Save-aware assignment continuation policy (reserve the champion for the final).
+- [ ] Final-round EV calculator surfaced directly in `pick.py`.
+- [ ] Auto-ingest the live bracket/odds instead of hand-editing `teams.txt`.
+
+## A neat finding
+The within-a-cluster EV order turned out to be **correlation-dependent**: if rivals
+all run the identical optimal plan, the player *forced to differ* (because they
+burned a key team) wins more *alone*; if rivals diverge realistically, the player
+who *kept the strongest hand* wins. Both are true — it's a dial, not a number — and
+the tier structure is robust either way. See `data/picks.md` for how it played out.
 
 ## Status
-Planning / scaffold stage — runs end-to-end on dummy data. Real bracket, odds,
-and observed rival picks arrive once the World Cup knockout draw is set; no rush.
+Live through the 2026 World Cup knockouts. Engine complete; each round we drop the
+surviving teams + fresh odds into `data/teams.txt` and re-run. Running commentary
+and standings: [`data/picks.md`](data/picks.md).
