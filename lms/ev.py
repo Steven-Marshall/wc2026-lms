@@ -16,8 +16,77 @@ Pot rules: the pot is split equally among whoever survives the most rounds
 import math
 import random
 
-from .bracket import round_names_for
+from .bracket import emerge_distributions, round_names_for
 from .simulate import participants, winner_of_match_containing
+
+
+# ---- save-aware assignment policy -------------------------------------------
+# Instead of greedily grabbing the best single pick each round (which dumps
+# strong teams too early), plan the whole remaining campaign: assign the player's
+# available teams across the remaining rounds to maximise the probability of
+# surviving them ALL -- which naturally reserves the strongest team for the final
+# (the only round the champion wins) and harvests weaker-but-safe teams early.
+
+_NEG = -60.0  # log of ~0
+
+
+def round_values(ctx, alive):
+    """For the current alive teams (bracket order), log P(team wins round k) for
+    each remaining round offset k. value = log P(team emerges from its size-2^(k+1)
+    subtree). k=0 is the current match; the last k is 'be champion of what's left'."""
+    em = emerge_distributions(alive, ctx._p)
+    k_rounds = len(alive).bit_length() - 1
+    values = {}
+    for t in alive:
+        row = []
+        size = 2
+        for _ in range(k_rounds):
+            p = em[size].get(t, 0.0)
+            row.append(math.log(p) if p > 1e-12 else _NEG)
+            size *= 2
+        values[t] = row
+    return values, k_rounds
+
+
+def assignment_pick(values, k_rounds, legal, rng=None, temp=0.0):
+    """For each legal current-round team t0, the value of the best plan that spends
+    t0 now = logP(t0 wins this round) + best assignment of the rest to later rounds.
+    Return argmax t0 (temp=0), or a softmax sample over those plan-values (temp>0,
+    modelling that real players don't all execute the identical optimal plan)."""
+    legal = [t for t in legal if t in values]
+    if not legal:
+        return None
+    n = len(legal)
+    if n < k_rounds:                               # can't cover every round
+        plan_val = {t: values[t][0] for t in legal}
+    else:
+        def best_rest(k, used_mask):
+            if k == k_rounds:
+                return 0.0
+            best = -1e18
+            for i in range(n):
+                bit = 1 << i
+                if used_mask & bit:
+                    continue
+                v = values[legal[i]][k] + best_rest(k + 1, used_mask | bit)
+                if v > best:
+                    best = v
+            return best
+        plan_val = {legal[i]: values[legal[i]][0] + best_rest(1, 1 << i)
+                    for i in range(n)}
+
+    if temp <= 0 or rng is None:
+        return max(plan_val, key=plan_val.get)
+    mx = max(plan_val.values())
+    weighted = [(t, math.exp((v - mx) / temp)) for t, v in plan_val.items()]
+    tot = sum(w for _, w in weighted)
+    r = rng.random() * tot
+    acc = 0.0
+    for t, w in weighted:
+        acc += w
+        if r <= acc:
+            return t
+    return weighted[-1][0]
 
 
 def _opp_marker(teams_in_round):
@@ -86,18 +155,20 @@ def run_field(ctx, sim, rivals, focal, rng, temp=0.0):
     return {name: st["n"] for name, st in state.items()}
 
 
-def run_field_fixed(ctx, sim, players, rng, temp=0.0):
+def run_field_fixed(ctx, sim, players, rng, temp=0.0, policy="assign"):
     """Like run_field but every player has a fixed R16 pick (their actual choice),
-    then plays greedy from the QF on. `temp` adds decision-noise to those
-    continuation picks so otherwise-identical players (e.g. a herd) diverge
-    realistically instead of clustering and splitting forever. players: [{name,
-    used, r16}]."""
+    then plays a continuation policy from the QF on. players: [{name, used, r16}].
+    policy="assign" = save-aware assignment (default); "greedy" = one-step harvest
+    with `temp` decision-noise."""
     rounds = round_names_for(len(ctx.teams))
     state = {p["name"]: {"used": set(p["used"]), "alive": True, "n": 0, "r16": p.get("r16")}
              for p in players}
     for ri, rnd in enumerate(rounds):
         parts = participants(sim, rnd)
         m = len(parts)
+        vals = kk = None
+        if policy == "assign" and ri > 0:
+            vals, kk = round_values(ctx, parts)   # shared across players this round
         for st in state.values():
             if not st["alive"]:
                 continue
@@ -107,6 +178,8 @@ def run_field_fixed(ctx, sim, players, rng, temp=0.0):
                 continue
             if ri == 0 and st["r16"] and st["r16"] in legal:
                 pick = st["r16"]
+            elif policy == "assign":
+                pick = assignment_pick(vals, kk, legal, rng, temp)
             else:
                 pick = _choose(ctx, sim, rnd, legal, m, rng, temp)
             st["used"].add(pick)
@@ -117,12 +190,12 @@ def run_field_fixed(ctx, sim, players, rng, temp=0.0):
     return {name: st["n"] for name, st in state.items()}
 
 
-def evaluate_field(ctx, sims, players, pot=1.0, seed=7, temp=0.0):
+def evaluate_field(ctx, sims, players, pot=1.0, seed=7, temp=0.0, policy="assign"):
     """Per-player EV / survival for a field of actual R16 picks."""
     rng = random.Random(seed)
     agg = {p["name"]: {"ev": 0.0, "r16": 0, "solo": 0, "money": 0} for p in players}
     for sim in sims:
-        res = run_field_fixed(ctx, sim, players, rng, temp)
+        res = run_field_fixed(ctx, sim, players, rng, temp, policy)
         best = max(res.values())
         winners = [nm for nm, k in res.items() if k == best]
         for nm, k in res.items():
