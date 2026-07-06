@@ -1,0 +1,31 @@
+# ============================================================================
+#  LMS WC2026 — R16 HALF-PLAYED state (bracket order A, C, B, D = corrected halves)
+#  Convert: python data/sheet_to_json.py
+# ============================================================================
+# pos | team | win_tie | reach_semi | reach_final | win_cup
+#   win_tie encodes the R16 state: 1.001 = already THROUGH, 1000 = already OUT,
+#   real price = pending tie. reach_* / win = fresh post-R16 market (out teams -> 9999).
+# HALF 1 = lines 1-8 (France/Morocco + Spain/Portugal). HALF 2 = lines 9-16 (England/Norway + Argentina).
+# ============================================================================
+
+# ---- HALF 1 : Quadrant A (France's quarter) ----
+A1 | Canada      | 1000 | 9999 | 9999 | 9999      # OUT (lost to Morocco)
+A1 | Morocco     | 1.001 | 4.3 | 13 | 45          # THROUGH
+A2 | Paraguay    | 1000 | 9999 | 9999 | 9999       # OUT (lost to France)
+A2 | France      | 1.001 | 1.3 | 1.92 | 3          # THROUGH
+# ---- HALF 1 : Quadrant C (France's SF side) ----
+C1 | Portugal    | 3.0 | 4.5 | 9.4 | 20            # pending v Spain
+C1 | Spain       | 1.5 | 2.04 | 4.1 | 7.2          # pending v Portugal
+C2 | USA         | 1.89 | 5.5 | 14 | 40            # pending v Belgium  (Mr T)
+C2 | Belgium     | 2.12 | 7.2 | 16 | 55            # pending v USA
+
+# ---- HALF 2 : Quadrant B (England / Norway) ----
+B1 | Brazil      | 1000 | 9999 | 9999 | 9999       # OUT (lost to Norway)
+B1 | Norway      | 1.001 | 2.9 | 7.4 | 35          # THROUGH
+B2 | Mexico      | 1000 | 9999 | 9999 | 9999       # OUT (lost to England)
+B2 | England     | 1.001 | 1.53 | 2.94 | 7         # THROUGH
+# ---- HALF 2 : Quadrant D (England's SF side, Argentina's quarter) ----
+D1 | Argentina   | 1.18 | 1.6 | 2.76 | 5.9         # pending v Egypt  (Hasan)
+D1 | Egypt       | 6.56 | 10 | 30 | 130            # pending v Argentina
+D2 | Switzerland | 2.47 | 8 | 22 | 90              # pending v Colombia
+D2 | Colombia    | 1.68 | 4.1 | 10 | 30            # pending v Switzerland

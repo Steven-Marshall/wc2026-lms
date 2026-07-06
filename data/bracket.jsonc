@@ -1,0 +1,23 @@
+// Generated from data/teams.txt — do not edit by hand.
+{
+  "format": "single-elimination, 32 teams, 4 quadrants",
+  "rounds": ["R32", "R16", "QF", "SF", "Final"],
+  "teams": [
+    "Canada",
+    "Morocco",
+    "Paraguay",
+    "France",
+    "Portugal",
+    "Spain",
+    "USA",
+    "Belgium",
+    "Brazil",
+    "Norway",
+    "Mexico",
+    "England",
+    "Argentina",
+    "Egypt",
+    "Switzerland",
+    "Colombia"
+  ]
+}

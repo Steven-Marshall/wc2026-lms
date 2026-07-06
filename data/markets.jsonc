@@ -1,0 +1,80 @@
+// Generated from data/teams.txt — do not edit by hand.
+{
+  "current_round": "R32",
+
+  "win": {
+    "Canada": 9999.0,
+    "Morocco": 45.0,
+    "Paraguay": 9999.0,
+    "France": 3.0,
+    "Portugal": 20.0,
+    "Spain": 7.2,
+    "USA": 40.0,
+    "Belgium": 55.0,
+    "Brazil": 9999.0,
+    "Norway": 35.0,
+    "Mexico": 9999.0,
+    "England": 7.0,
+    "Argentina": 5.9,
+    "Egypt": 130.0,
+    "Switzerland": 90.0,
+    "Colombia": 30.0
+  },
+
+  "reach_final": {
+    "Canada": 9999.0,
+    "Morocco": 13.0,
+    "Paraguay": 9999.0,
+    "France": 1.92,
+    "Portugal": 9.4,
+    "Spain": 4.1,
+    "USA": 14.0,
+    "Belgium": 16.0,
+    "Brazil": 9999.0,
+    "Norway": 7.4,
+    "Mexico": 9999.0,
+    "England": 2.94,
+    "Argentina": 2.76,
+    "Egypt": 30.0,
+    "Switzerland": 22.0,
+    "Colombia": 10.0
+  },
+
+  "reach_semi": {
+    "Canada": 9999.0,
+    "Morocco": 4.3,
+    "Paraguay": 9999.0,
+    "France": 1.3,
+    "Portugal": 4.5,
+    "Spain": 2.04,
+    "USA": 5.5,
+    "Belgium": 7.2,
+    "Brazil": 9999.0,
+    "Norway": 2.9,
+    "Mexico": 9999.0,
+    "England": 1.53,
+    "Argentina": 1.6,
+    "Egypt": 10.0,
+    "Switzerland": 8.0,
+    "Colombia": 4.1
+  },
+
+  "match": {
+    "Canada": 1000.0,
+    "Morocco": 1.001,
+    "Paraguay": 1000.0,
+    "France": 1.001,
+    "Portugal": 3.0,
+    "Spain": 1.5,
+    "USA": 1.89,
+    "Belgium": 2.12,
+    "Brazil": 1000.0,
+    "Norway": 1.001,
+    "Mexico": 1000.0,
+    "England": 1.001,
+    "Argentina": 1.18,
+    "Egypt": 6.56,
+    "Switzerland": 2.47,
+    "Colombia": 1.68
+  }
+}
