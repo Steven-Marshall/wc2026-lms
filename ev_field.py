@@ -39,8 +39,11 @@ def main():
           + "  ".join(f"{k}={v*100:.2f}pp" for k, v in errs.items()))
     n = len(FIELD)
     spent = {p["name"]: p["used"][0] for p in FIELD}
-    rows = evaluate_field(ctx, sims, FIELD, temp=0.0)
-    print(f"\n{n} players still alive. Fair share = {100/n:.1f}% of pot.\n")
+    # save-aware assignment continuation, with moderate plan-divergence (real
+    # rivals don't all run the identical optimal plan).
+    rows = evaluate_field(ctx, sims, FIELD, policy="assign", temp=0.12)
+    print(f"\n{n} players still alive. Fair share = {100/n:.1f}% of pot.")
+    print("(save-aware assignment policy, moderate rival plan-divergence)\n")
     print(f"{'player':9} {'R16 pick':10} {'spent':10} {'survive R16':>11}  {'EV':>7}")
     print("-" * 55)
     for r in sorted(rows, key=lambda r: -r["ev"]):
