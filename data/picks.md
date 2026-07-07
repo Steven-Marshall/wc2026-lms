@@ -9,7 +9,7 @@ busts the round, which won't happen).
 |--|--|--|--|--|--|
 | Andy W | Argentina | Mexico ✗ | — | — | — |
 | Hasan | USA | Argentina | | | |
-| Mr T | Egypt | USA | | | |
+| Mr T | Egypt | USA ✗ | — | — | — |
 | Georgie B | Germany ✗ | — | — | — | — |
 | Conrad | England | Morocco | | | |
 | Huw | USA | Morocco | | | |
@@ -26,7 +26,18 @@ USA ×1 (Mr T), Mexico ×1 (Andy W). Fair share = 12.5%.
 - **Morocco 3-0 Canada** (Jul 4) → **Matty, Huw, Conrad, Andrea, Malley THROUGH to QF.**
 - **England 3-2 Mexico** (10 men) → **Andy W ELIMINATED** (his Mexico coin-flip missed). England to QF.
 - **Norway 2-1 Brazil** (shock) → Brazil OUT (no pool pick; symmetric loss). QF-B = Norway v England.
-- Still to play: USA–Belgium (Mr T, Jul 6), Argentina–Egypt (Hasan, Jul 7).
+- **Belgium 4-1 USA** (Jul 6) → **Mr T ELIMINATED** (2nd contrarian gone; Balogun's
+  red card was controversially reinstated by FIFA — reportedly after Trump rang
+  Infantino — and USA lost 4-1 anyway). **Spain 1-0 Portugal** → Spain through, Ronaldo out.
+- QF now: Morocco v France | Norway v England | Spain v Belgium | (Arg/Egy)–(Swi/Col).
+- Still to play: Argentina–Egypt (Hasan, Jul 7), Switzerland–Colombia.
+- Field: 6 alive = 5 Morocco (through) + Hasan (pending). Out: Smarshy, Georgie B, JP, Andy W, Mr T.
+
+## Standings (Jul 6, 6 alive, fair share 16.7%; approx — running on prior outrights)
+Huw 19.6 · Malley 19.4 (best hands) > Matty 16.3 (burned Arg) > Conrad/Andrea 15.1–15.3
+(burned England) > Hasan 14.3 (pending Arg tie). Huw edged Malley for #1: USA (Huw's burn)
+is now OUT so it cost him nothing, while Belgium (Malley's burn) went THROUGH — the
+asymmetric-elimination effect flipping the lead on a game neither picked.
 - Field: OUT (4) = Smarshy, Georgie B, JP, Andy W. ALIVE (7) = 5 Morocco (through) + Hasan, Mr T (pending).
 - Morocco holding = the "Moro WIN" EV branch: herd now best-positioned (~15% each, Malley
   leads on his stronger kept hand); Hasan halved to ~11.7% (mid); breakaways Mr T ~7% / Andy W

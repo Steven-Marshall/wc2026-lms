@@ -14,10 +14,10 @@ A1 | Morocco     | 1.001 | 4.3 | 13 | 45          # THROUGH
 A2 | Paraguay    | 1000 | 9999 | 9999 | 9999       # OUT (lost to France)
 A2 | France      | 1.001 | 1.3 | 1.92 | 3          # THROUGH
 # ---- HALF 1 : Quadrant C (France's SF side) ----
-C1 | Portugal    | 3.0 | 4.5 | 9.4 | 20            # pending v Spain
-C1 | Spain       | 1.5 | 2.04 | 4.1 | 7.2          # pending v Portugal
-C2 | USA         | 1.89 | 5.5 | 14 | 40            # pending v Belgium  (Mr T)
-C2 | Belgium     | 2.12 | 7.2 | 16 | 55            # pending v USA
+C1 | Portugal    | 1000 | 9999 | 9999 | 9999       # OUT (lost to Spain)
+C1 | Spain       | 1.001 | 2.04 | 4.1 | 7.2        # THROUGH
+C2 | USA         | 1000 | 9999 | 9999 | 9999        # OUT (lost to Belgium) -> Mr T eliminated
+C2 | Belgium     | 1.001 | 7.2 | 16 | 55           # THROUGH
 
 # ---- HALF 2 : Quadrant B (England / Norway) ----
 B1 | Brazil      | 1000 | 9999 | 9999 | 9999       # OUT (lost to Norway)

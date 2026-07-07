@@ -23,7 +23,7 @@ FIELD = [
     {"name": "Andrea", "used": ["England"],   "r16": "Morocco"},
     {"name": "Malley", "used": ["Belgium"],   "r16": "Morocco"},
     {"name": "Hasan",  "used": ["USA"],       "r16": "Argentina"},  # pending v Egypt
-    {"name": "Mr T",   "used": ["Egypt"],     "r16": "USA"},        # pending v Belgium
+    # Mr T (USA) eliminated in R16 by Belgium.
 ]
 
 
