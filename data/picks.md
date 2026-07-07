@@ -33,11 +33,12 @@ USA ×1 (Mr T), Mexico ×1 (Andy W). Fair share = 12.5%.
 - Still to play: Argentina–Egypt (Hasan, Jul 7), Switzerland–Colombia.
 - Field: 6 alive = 5 Morocco (through) + Hasan (pending). Out: Smarshy, Georgie B, JP, Andy W, Mr T.
 
-## Standings (Jul 6, 6 alive, fair share 16.7%; approx — running on prior outrights)
-Huw 19.6 · Malley 19.4 (best hands) > Matty 16.3 (burned Arg) > Conrad/Andrea 15.1–15.3
-(burned England) > Hasan 14.3 (pending Arg tie). Huw edged Malley for #1: USA (Huw's burn)
-is now OUT so it cost him nothing, while Belgium (Malley's burn) went THROUGH — the
-asymmetric-elimination effect flipping the lead on a game neither picked.
+## Standings (Jul 7, fresh odds, 6 alive, fair share 16.7%)
+Huw 18.2 · Malley 18.0 (best hands, neck-and-neck) > **Matty 17.4** (up — Argentina
+drifted to 3rd fav so his burn hurts less) > Conrad/Andrea 15.8 (England firming keeps
+their burn costly) > Hasan 14.9 (86% to win his Argentina tie tomorrow). Leaderboard now
+re-prices daily with the market: your standing = the live value of the hand you burned.
+Contrarians both dead (Andy W/Mexico, Mr T/USA). Calibration clean (~1pp).
 - Field: OUT (4) = Smarshy, Georgie B, JP, Andy W. ALIVE (7) = 5 Morocco (through) + Hasan, Mr T (pending).
 - Morocco holding = the "Moro WIN" EV branch: herd now best-positioned (~15% each, Malley
   leads on his stronger kept hand); Hasan halved to ~11.7% (mid); breakaways Mr T ~7% / Andy W
