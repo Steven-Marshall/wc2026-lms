@@ -167,7 +167,7 @@ def run_field_fixed(ctx, sim, players, rng, temp=0.0, policy="assign"):
         parts = participants(sim, rnd)
         m = len(parts)
         vals = kk = None
-        if policy == "assign" and ri > 0:
+        if policy == "assign":
             vals, kk = round_values(ctx, parts)   # shared across players this round
         for st in state.values():
             if not st["alive"]:
