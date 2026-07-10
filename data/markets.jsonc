@@ -3,30 +3,30 @@
   "current_round": "R32",
 
   "win": {
-    "Morocco": 35.0,
-    "France": 3.05,
-    "Spain": 5.25,
-    "Belgium": 39.0,
-    "Norway": 17.0,
-    "England": 6.1,
-    "Argentina": 5.35,
-    "Switzerland": 43.0
+    "Morocco": 9999.0,
+    "France": 2.42,
+    "Spain": 5.95,
+    "Belgium": 50.0,
+    "Norway": 19.6,
+    "England": 6.45,
+    "Argentina": 5.78,
+    "Switzerland": 52.6
   },
 
   "reach_final": {
-    "Morocco": 13.5,
-    "France": 1.97,
-    "Spain": 2.79,
-    "Belgium": 15.0,
-    "Norway": 7.0,
-    "England": 2.65,
+    "Morocco": 9999.0,
+    "France": 1.56,
+    "Spain": 3.31,
+    "Belgium": 17.9,
+    "Norway": 6.54,
+    "England": 2.74,
     "Argentina": 2.52,
-    "Switzerland": 13.0
+    "Switzerland": 11.9
   },
 
   "reach_semi": {
-    "Morocco": 4.7,
-    "France": 1.27,
+    "Morocco": 9999.0,
+    "France": 1.001,
     "Spain": 1.34,
     "Belgium": 3.94,
     "Norway": 2.96,
@@ -36,8 +36,8 @@
   },
 
   "match": {
-    "Morocco": 4.7,
-    "France": 1.27,
+    "Morocco": 1000.0,
+    "France": 1.001,
     "Spain": 1.34,
     "Belgium": 3.94,
     "Norway": 2.96,
