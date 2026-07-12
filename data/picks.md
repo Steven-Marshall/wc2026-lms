@@ -85,28 +85,65 @@ clone's France also wins. They can never separate, so they can never stand alone
 They are not playing for the pot — they are playing to *share it with the one person
 they can never shake off.*
 
+To win outright you need two things: your pick to win, **and every other survivor's
+pick to lose.** Against your own clone, that second condition is not unlikely — it
+is *impossible*. It isn't misfortune. It's arithmetic.
+
 ---
 
-## The way out (and the cruel joke in it)
+## The way out — and why nobody will take it
 
-The locked-out four *can* buy a shot at winning — by spending **France in the semi**
-and keeping their other team for the final round:
+There *is* an escape. Any of the four can manufacture a shot at winning by spending
+**France in the semi** and keeping their other team for the final round. It's a
+"suboptimal" pick that buys a real chance.
 
-| | Play it safe | Go for the win |
+Except the moment you write down the actual game, it turns into something far
+crueller. Here is each pair's 2×2 — **payoffs shown for the row player:**
+
+**Matty vs Hasan**
+
+| | Hasan **stays** | Hasan **jumps** |
 |--|--|--|
-| **Matty / Hasan** | semi England, final France → EV 14.8%, **win 0%** | semi **France**, final England → EV 12.6%, **win 4.3%** |
-| **Conrad / Andrea** | semi Argentina, final France → EV 17.5%, **win 0%** | semi **France**, final Argentina → EV 12.0%, **win 4.3%** |
+| **Matty stays** | EV 14.8%, win **0%** | **EV 25.9%, win 15.0%** |
+| **Matty jumps** | EV 12.6%, win 4.3% | EV 7.9%, win **0%** |
 
-So a real chance of winning is available — at a cost of a few points of EV.
+**Conrad vs Andrea**
 
-**But it only works if you are the ONLY one of your pair to do it.** If Matty and
-Hasan both switch, they're identical again and they're right back to 0%. Same for
-Conrad and Andrea.
+| | Andrea **stays** | Andrea **jumps** |
+|--|--|--|
+| **Conrad stays** | EV 17.5%, win **0%** | **EV 30.7%, win 26.2%** |
+| **Conrad jumps** | EV 12.0%, win 4.3% | EV 13.4%, win **0%** |
 
-**Each pair is now playing a game of chicken with itself.** To have any chance of
-winning outright, exactly one twin must break away — and picks are simultaneous, so
-neither can know whether the other is doing precisely the same thing. Two men, one
-lifeboat, no talking.
+Three things fall out, and they get progressively worse:
+
+**1. Jumping is a *dominated* move.** Whatever your twin does, you are better off
+staying. Andrea jumps? Conrad should stay (30.7 beats 13.4). Andrea stays? Conrad
+should stay (17.5 beats 12.0). **Staying wins in every column.** So a rational
+Conrad never jumps — nor does Andrea — and they both collect their guaranteed **0%**.
+
+**2. The jump is a gift to your twin, not to yourself.** If Andrea jumps, *she* gets
+a meagre 4.3% and her EV *falls* to 12.0 — while **Conrad, who did nothing at all,
+is freed of his clone and rockets to EV 30.7% with a 26.2% chance of winning
+outright.** That is the best hand on the entire board — better than Huw's. **The
+escape hatch only opens for the person who didn't jump.**
+
+**3. And if you both jump, you're clones again** — straight back to 0%, and Matty and
+Hasan end up *poorer* than if they'd both stayed (7.9% vs 14.8%).
+
+So this isn't a game of chicken. **It's a volunteer's dilemma.** Each pair would be
+collectively richer if exactly one of them jumped (Conrad + Andrea: 42.7% of the pot
+between them, versus 35.0% if both sit tight) — but **the volunteer personally pays
+for it, and hands the windfall to the very man he's trying to beat.**
+
+Nobody volunteers. They are *rationally* trapped at zero.
+
+**The only true escape is collusion.** If Conrad and Andrea could agree — *"you jump,
+I stay, and we split whatever I win"* — that is jointly +7.7 points of EV and turns a
+0% into a 26.2% shot at the pot. Perfectly rational. Entirely unenforceable. And the
+picks are simultaneous.
+
+Which leaves us here: **four men, in two pairs, each quietly praying his twin loses
+his nerve first.** Game theory says neither will.
 
 ---
 
