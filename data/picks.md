@@ -1,113 +1,132 @@
 # LMS World Cup 2026 — pick tracker & commentary
 
 A Last-Man-Standing pool over the WC2026 knockouts. Each round you pick one team;
-it must **win** (advance) or you're out; you can **never repick** a team. The game
-runs until one player is left standing; if the tournament runs out of rounds with
-several still alive, they're joint winners. 11 players entered the knockout; picks
-and history are public. Full method: see the repo README.
+it must **win** or you're out; you can **never repick**. The game runs until one
+player is left standing. If the tournament runs out of rounds with several still
+alive, they are **joint winners**. And — crucially — *if every active player picks
+a loser in a round, nobody goes out.* 11 players entered the knockout.
 
 ---
 
-## 🐙 Quarter-finals: Huw broke the herd
+## 🐙 Two rounds left. And four of you cannot win.
 
-We said before the round: *"Pick Spain — but France is a lovely contrarian, and
-honestly every sensible play is playable."* Five took Spain.
+That is not a figure of speech. **Matty, Hasan, Conrad and Andrea have a 0.0%
+chance of winning this competition outright.** Not "small" — zero. They are
+mathematically locked into sharing the pot. Read on; it's the best thing the model
+has found all tournament.
 
-**Huw took England.** Which wasn't one of the four plays we'd written up at all.
-He found a fifth. It's the sharpest move anyone has made all tournament, and it's
-worth understanding why.
+---
 
-| Player | QF pick | EV (pot share) | Solo-win | Wins outright at the QF |
+## Where we are
+
+**Semi-finals:** France v Spain · England v Argentina
+**Final round:** the **Final** *and* the **3rd/4th playoff** are played together —
+so **all four teams are playing**, and you may pick any of them. You survive the
+round if your pick wins **its own match**.
+
+That last rule matters enormously: **nobody can be stranded any more.** Whatever
+you don't spend in the semi is guaranteed to be playing somewhere.
+
+**The market (vig-free):** France **59.2%** to beat Spain · England **55.9%** to
+beat Argentina (England is now favourite — it was a coin-flip before the quarters).
+Outrights: France 39.1%, England 22.1%, Spain 21.1%, Argentina 17.8%.
+
+**Who holds what**
+
+| Player | Burned (of the four) | Still holds |
+|--|--|--|
+| **Huw** | England | **France, Spain, Argentina** |
+| **Malley** | Spain | **France, England, Argentina** |
+| Matty | Spain, Argentina | France, England |
+| Hasan | Spain, Argentina | France, England |
+| Conrad | Spain, England | France, Argentina |
+| Andrea | Spain, England | France, Argentina |
+
+---
+
+## The board (exact — no simulation, every world enumerated)
+
+| Player | Semi | Final round | EV | **Chance of winning outright** |
 |--|--|--|--|--|
-| **Huw** | **England** | **28.3%** | **21.3%** | **16.9%** |
-| Malley | Spain | 15.4% | 0.5% | — |
-| Hasan | Spain | 15.2% | 0.3% | — |
-| Matty | Spain | 15.2% | 0.3% | — |
-| Conrad | Spain | 13.0% | 0.3% | — |
-| Andrea | Spain | 12.9% | 0.3% | — |
+| **Huw** | France | Spain *(in the playoff)* | **18.5%** | 10.4% |
+| Conrad | Argentina | France | 17.5% | **0.0%** |
+| Andrea | Argentina | France | 17.5% | **0.0%** |
+| **Malley** | England | Argentina | 16.8% | **13.3%** |
+| Matty | England | France | 14.8% | **0.0%** |
+| Hasan | England | France | 14.8% | **0.0%** |
 
-*Fair share is 16.7%. Huw is on ~1.7× that. Every Spain-picker is below it.*
+**How it ends:** solo winner **23.7%** · 2-way split **41.2%** · 3-way split **35.2%**.
 
----
-
-## What actually happens this weekend
-
-Two matches decide everything. Spain are 74.6% against Belgium; England 66.2%
-against Norway. That gives four worlds:
-
-| Spain | England | Chance | What it means |
-|--|--|--|--|
-| ✅ | ✅ | **49.4%** | all six march on |
-| ✅ | ❌ | **25.2%** | **Huw out, alone** |
-| ❌ | ✅ | **16.8%** | **the other five are out — Huw wins the pot, there and then** |
-| ❌ | ❌ | 8.6% | everyone picked a loser → *nobody* goes out (see below) |
-
-**Huw has a one-in-six chance of simply winning the whole thing before the semis
-are even played.**
+Note the inversion at the top: **Huw has the better EV, but Malley has the better
+chance of actually winning.** Huw's hand is worth more; Malley's is worth *winning*.
 
 ---
 
-## Why the England pick is so good
+## Why four of you can't win
 
-**1. He's the only one who can't be stranded on the France/Spain side.**
-France and Spain are in the same half — they meet in the semi, and only one can
-reach the final. The five who spent Spain now hold **only France**. Huw, having
-burned England instead, still holds **both France *and* Spain**. Whoever wins that
-semi, *he is holding them.* If Spain beats France (a real 40%), five men are left
-clutching a corpse while Huw calmly plays Spain.
+**1. Playing France in the final round is a guaranteed split.** The model puts it at
+exactly **0.0%** — anyone who plays France cannot win outright. Here's the trap:
 
-**2. He armed a landmine that was, until he pulled the pin, completely harmless.**
-This is the lovely bit. The rules say: *if **all** active players pick a losing
-team in a round, nobody goes out — everyone continues.* So a **unanimous field is
-un-killable.** Had all six taken Spain, a Belgium shock would have eliminated
-precisely nobody. It's only because **one man is holding a different ticket** that
-Spain losing becomes fatal — suddenly it's no longer true that everyone picked a
-loser, and the five are gone.
+- France **wins** its match → everyone on France survives → joint winners → **split**.
+- France **loses** → they *all* picked a loser → the all-lose rule fires → everyone
+  continues → but there are no rounds left → joint winners → **split**.
 
-He didn't dodge the herd's correlation. **He weaponised it.** The only way to
-punish a crowd is to be the lone defector who wins.
+Same outcome either way. France is the safest team on the board — it wins its
+final-round match ~62% *whether it's in the Final or the playoff* — and that safety
+is precisely the cage. **It buys you a guaranteed share and forecloses a win.**
 
-**3. It's cheaper than it looks.** That same rule bails Huw out whenever *both*
-Spain and England lose. So his real elimination risk is **25.2%**, not the 33.8%
-England's price implies. He survives the round 74.8% of the time; the herd, 83.2%.
-He bought a 16.8% outright win for about 8 points of extra risk.
+**2. You are travelling in identical pairs.** This is the killer.
+
+> **Matty and Hasan hold exactly the same two teams.** So do **Conrad and Andrea.**
+
+Identical constraints force identical picks. Which means each twin **survives and
+dies with the other, in every single world.** Even when their France wins, their
+clone's France also wins. They can never separate, so they can never stand alone.
+They are not playing for the pot — they are playing to *share it with the one person
+they can never shake off.*
 
 ---
 
-## Where the pot gets won (the thing everyone's missing)
+## The way out (and the cruel joke in it)
 
-Split each strategy's expected value into *"won in the semis"* vs *"won at the
-final"*, and two facts fall out:
+The locked-out four *can* buy a shot at winning — by spending **France in the semi**
+and keeping their other team for the final round:
 
-- The **"won at the final" slice is a flat ~10% for every single play.** The final
-  is a commodity — every route cashes about the same there.
-- So **all** the difference between a good play and a great one sits in the
-  *semis* — how often your pick leaves you **last man standing before the final
-  even kicks off.** For the sharpest plays, two-thirds of the value is won there.
+| | Play it safe | Go for the win |
+|--|--|--|
+| **Matty / Hasan** | semi England, final France → EV 14.8%, **win 0%** | semi **France**, final England → EV 12.6%, **win 4.3%** |
+| **Conrad / Andrea** | semi Argentina, final France → EV 17.5%, **win 0%** | semi **France**, final Argentina → EV 12.0%, **win 4.3%** |
 
-And a herd never collects it. A unanimous field moves as one organism: it survives
-together or dies together, so it produces mass splits, not winners. The lone
-survivor is the **reward for divergence**. Huw is the only one positioned to claim it.
+So a real chance of winning is available — at a cost of a few points of EV.
+
+**But it only works if you are the ONLY one of your pair to do it.** If Matty and
+Hasan both switch, they're identical again and they're right back to 0%. Same for
+Conrad and Andrea.
+
+**Each pair is now playing a game of chicken with itself.** To have any chance of
+winning outright, exactly one twin must break away — and picks are simultaneous, so
+neither can know whether the other is doing precisely the same thing. Two men, one
+lifeboat, no talking.
 
 ---
 
-## Results log
+## Huw, again
 
-**Round of 32 (11 → 8).** Out: Smarshy & Georgie B — Germany, an 85% pick and the
-model's top harvest, lost to Paraguay on penalties; JP failed to pick.
+Huw's optimal line is to **spend France in the semi.** Burning his best team looks
+like heresy. It's the same move that won him the quarter-finals.
 
-**Round of 16 (8 → 6).** Morocco 3-0 Canada. England 3-2 Mexico (10 men) →
-**Andy W out**. Belgium 4-1 USA → **Mr T out**. **Argentina 3-2 Egypt** from 2-0
-down → **Hasan survives**. Switzerland beat Colombia on pens. France 1-0 Paraguay,
-Norway 2-1 Brazil (shock), Spain 1-0 Portugal.
+France is his **safest semi gate** (59.2%), and spending it leaves him holding
+**Spain and Argentina** — the weapons to play *against* a France-laden field in the
+final round. He then plays **Spain in the third-place playoff.** In the world where
+France loses the Final while Spain wins the playoff, **the pot is his alone.**
 
-**Quarter-finals (in progress).**
-- **France 2-0 Morocco.** No pool picks involved — but it matters: France firms to
-  a **41.4% champion** (from 32.6%), and everyone holds France. Meanwhile **Spain
-  got *weaker*** (reach-final 34.8% → 30.2%), because it must now face France in
-  the semi with no easier Morocco route. Huw is the only one still holding Spain,
-  so the one man who wasn't playing took the only real hit.
-- **Still to play:** Spain v Belgium, Norway v England, Argentina v Switzerland.
+Which is worth sitting with for a second: **the model's best line for the tournament
+leader is to ignore the World Cup Final entirely and back a team in the dead
+rubber.** Under the old rules that route did not exist.
+
+Malley runs the same idea one notch weaker (defect with Argentina) — which is exactly
+why he's clear of Matty and Hasan despite an identical semi pick, and why he has the
+best chance of anyone of actually lifting the thing.
 
 ---
 
@@ -115,49 +134,57 @@ Norway 2-1 Brazil (shock), Spain 1-0 Portugal.
 
 | Player | R32 | R16 | QF | SF | Final |
 |--|--|--|--|--|--|
-| Huw | USA | Morocco | **England** | | |
-| Malley | Belgium | Morocco | **Spain** | | |
-| Matty | Argentina | Morocco | **Spain** | | |
-| Hasan | USA | Argentina | **Spain** | | |
-| Conrad | England | Morocco | **Spain** | | |
-| Andrea | England | Morocco | **Spain** | | |
+| Huw | USA | Morocco | England | | |
+| Malley | Belgium | Morocco | Spain | | |
+| Matty | Argentina | Morocco | Spain | | |
+| Hasan | USA | Argentina | Spain | | |
+| Conrad | England | Morocco | Spain | | |
+| Andrea | England | Morocco | Spain | | |
 | Andy W | Argentina | Mexico ✗ | — | — | — |
 | Mr T | Egypt | USA ✗ | — | — | — |
 | Georgie B | Germany ✗ | — | — | — | — |
 | Smarshy (me) | Germany ✗ | — | — | — | — |
 | JP | — (no pick) ✗ | — | — | — | — |
 
-Worth noting: **Conrad and Andrea have now burned England, Spain *and* Morocco.**
-Their only route through the strong half is France, and their only half-2 option is
-the Argentina nobody wants to touch. That's why they sit at the bottom of the table.
+---
+
+## Results log
+
+**R32 (11 → 8).** Germany lost to Paraguay on penalties — an 85% pick, and the
+model's top harvest. Smarshy and Georgie B out; JP never picked.
+
+**R16 (8 → 6).** Morocco 3-0 Canada. England 3-2 Mexico → **Andy W out**.
+Belgium 4-1 USA → **Mr T out**. Argentina 3-2 Egypt from 2-0 down → **Hasan
+survives**. Switzerland beat Colombia on pens.
+
+**Quarter-finals (6 → 6 — everyone through).**
+- **France 2-0 Morocco.**
+- **Spain beat Belgium** → the five Spain-pickers survive.
+- **England 2-1 Norway (a.e.t., 1-1 at 90)** → **Huw survives.**
+- **Argentina beat Switzerland.**
+
+Huw's England gamble came off. Had Belgium won, he would have been the last man
+standing and the game would already be over — he was a one-in-six shot from ending
+it in the quarters.
 
 ---
 
-## The board, after France
+## The honest caveat
 
-| Team | Win its QF | Reach final | Win cup |
-|--|--|--|--|
-| **France** | *through* | 64.1% | **41.4%** |
-| Argentina | 73.0% | 39.7% | 17.3% |
-| Spain | 74.6% | 30.2% | 16.8% |
-| England | 66.2% | 36.5% | 15.5% |
-| Norway | 33.8% | 15.3% | 5.1% |
-| Belgium | 25.4% | 5.6% | 2.0% |
-| Switzerland | 27.0% | 8.4% | 1.9% |
-| Morocco | ✗ out | — | — |
+Huw's optimal line — and a big slice of everyone's EV — now runs **through the
+third-place playoff**, and the model prices that game on pure team strength. In
+reality a 3rd/4th playoff is the most motivation-distorted fixture in football:
+tired legs, no glory, nobody wants to be there. **The model cannot see any of that.**
+
+So treat every playoff-dependent number here as the least trustworthy on the board.
+The pool leader's best strategy now depends on the single most unmodellable match of
+the tournament. That is a direct consequence of merging the playoff into the final
+round — make of it what you will.
 
 ---
 
-## How the model reads it (for the curious)
-- **Harvest early:** spend safe teams that won't go deep anyway; never burn a
-  genuine contender early.
-- **Save the champion:** the only team that wins the final *is* the champion.
-- **Alone beats in-a-crowd:** with a shared pot, being the *sole* survivor is worth
-  far more than being one of a pack. The value is in holding the finalist the crowd
-  *isn't* on — and in being the one player whose fate isn't tied to everyone else's.
-- Engine: `ev_field.py`, `ev_deviation.py`, `ev_where_won.py`, `ev_after_picks.py`
-  simulate every rival's used-list to the final, split the pot, and score each play
-  — including *which round* it gets won in.
-
-*(EV figures are being refreshed as we tighten a couple of endgame rule details in
-the engine; expect small movements, not new conclusions.)*
+## How the model works
+Bradley-Terry team strengths fitted to the vig-free market (match odds + outrights),
+then the endgame is solved **exactly** — all 16 worlds enumerated, no Monte Carlo —
+as a game, with best-response iteration to a Nash equilibrium. See `endgame.py`,
+`endgame_solve.py`, `endgame_outcomes.py`.

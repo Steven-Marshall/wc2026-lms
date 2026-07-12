@@ -1,28 +1,20 @@
 # ============================================================================
-#  LMS WC2026 — QUARTER-FINALS, half played. Order A,C,B,D.
-#  France 2-0 Morocco (France THROUGH). Spain-Belgium, Norway-England,
-#  Argentina-Switzerland still to play.
+#  LMS WC2026 — SEMI-FINALS (4 teams). Bracket order pairs them:
+#      France v Spain   |   England v Argentina
 #  Convert: python data/sheet_to_json.py
 # ============================================================================
 # pos | team | win_tie | reach_semi | reach_final | win_cup
-#   win_tie/reach_semi: 1.001=through, 1000=out, real price=pending (win QF).
-#   reach_final/win_cup = model-implied AFTER the France result (strengths held
-#   fixed, bracket re-solved). France firms to 41.4% champion; Spain's reach-final
-#   DROPS (34.8->30.2) now that it must meet France in the semi.
-# HALF 1 = lines 1-4 (France + Spain/Belgium) -> SF: France v (Spain/Belgium)
-# HALF 2 = lines 5-8 (Norway/England + Argentina/Switzerland)
+#   win_tie = reach_final = P(win your semi)  [same thing with 4 teams left]
+#   reach_semi = 1.001 for all (they ARE the semi-finalists; normalises to 1.0)
+#   Market (fresh): France 1.69 to beat Spain; England 1.79 to beat Argentina
+#     -> underdogs are the vig-free complements (Spain 2.449, Argentina 2.266).
+#   Outright: France 2.57, England 4.55, Spain 4.75, Argentina 5.65.
+#   NOTE: England is now FAVOURITE over Argentina (was a coin-flip pre-QF).
 # ============================================================================
 
-# ---- HALF 1 : Quadrant A ----
-A1 | Morocco     | 1000  | 9999  | 9999 | 9999    # OUT (lost 0-2 to France)
-A2 | France      | 1.001 | 1.001 | 1.56 | 2.42    # THROUGH — now clear favourite
-# ---- HALF 1 : Quadrant C ----
-C1 | Spain       | 1.34  | 1.34  | 3.31 | 5.95    # pending v Belgium
-C2 | Belgium     | 3.94  | 3.94  | 17.9 | 50      # pending v Spain
-
-# ---- HALF 2 : Quadrant B ----
-B1 | Norway      | 2.96  | 2.96  | 6.54 | 19.6    # pending v England
-B2 | England     | 1.51  | 1.51  | 2.74 | 6.45    # pending v Norway (Huw's pick)
-# ---- HALF 2 : Quadrant D ----
-D1 | Argentina   | 1.37  | 1.37  | 2.52 | 5.78    # pending v Switzerland
-D2 | Switzerland | 3.70  | 3.70  | 11.9 | 52.6    # pending v Argentina
+# ---- SEMI 1 ----
+S1 | France      | 1.69  | 1.001 | 1.69  | 2.57    # 59.2% to reach the final
+S1 | Spain       | 2.449 | 1.001 | 2.449 | 4.75    # 40.8%
+# ---- SEMI 2 ----
+S2 | England     | 1.79  | 1.001 | 1.79  | 4.55    # 55.9% — now the favourite
+S2 | Argentina   | 2.266 | 1.001 | 2.266 | 5.65    # 44.1%

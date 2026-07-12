@@ -23,7 +23,10 @@ def calibrate(teams, market, iters=600, lr=0.35, first_round_p=None):
     fit (so already-decided / market-priced first-round ties aren't re-modelled).
     Returns {team: theta}.
     """
-    active = [m for m in MARKER_WEIGHTS if m in market]
+    # only fit markers the bracket actually produces at this size (e.g. a 4-team
+    # bracket has no "reach_semi" -- everyone is already in the semi-finals)
+    probe = reach_markers(teams, {t: 1.0 for t in teams}, first_round_p)
+    active = [m for m in MARKER_WEIGHTS if m in market and m in probe]
     theta = {t: 1.0 for t in teams}
     for _ in range(iters):
         model = reach_markers(teams, theta, first_round_p)

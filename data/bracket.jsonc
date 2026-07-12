@@ -3,13 +3,9 @@
   "format": "single-elimination, 32 teams, 4 quadrants",
   "rounds": ["R32", "R16", "QF", "SF", "Final"],
   "teams": [
-    "Morocco",
     "France",
     "Spain",
-    "Belgium",
-    "Norway",
     "England",
-    "Argentina",
-    "Switzerland"
+    "Argentina"
   ]
 }
