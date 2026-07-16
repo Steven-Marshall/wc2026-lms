@@ -4,131 +4,115 @@ A Last-Man-Standing pool over the WC2026 knockouts. Each round you pick one team
 it must **win** or you're out; you can **never repick**. The game runs until one
 player is left standing. If the tournament runs out of rounds with several still
 alive, they are **joint winners**. And — crucially — *if every active player picks
-a loser in a round, nobody goes out.* 11 players entered the knockout.
+a loser in a round, nobody goes out.* 11 players entered the knockout. Four remain.
 
 ---
 
-## 🐙 The semi-finals: four of you insured, two of you didn't
+## 🐙 One round left. And after all that, you're all level.
 
-**Semis:** France v Spain (France **59.2%**) · **England v Argentina** (England **55.9%**)
+| Player | Plays | Where | **EV** | **WIN outright** |
+|--|--|--|--|--|
+| **Malley** | **England** | 3rd/4th playoff | **25.7%** | **15.1%** |
+| Conrad | France | 3rd/4th playoff | 25.6% | 0.0% |
+| Andrea | France | 3rd/4th playoff | 25.6% | 0.0% |
+| Huw | Spain | **the Final** | 23.0% | 0.0% |
 
-The picks are in, and they are astonishing:
+**Fair share is 25%.** Five rounds of strategy, agonising, contrarian genius and
+emotional hedging — and all four of you have arrived within **2.7 points of exactly
+average.** The game has flattened everyone.
 
-| Camp | Players | Chance |
+But those identical numbers are not the same animal at all. **Malley's 25.7% is a
+lottery ticket — 15.1% of the entire pot, or nothing.** Conrad and Andrea's 25.6% is
+an *annuity* — a near-certain share, and a mathematical impossibility of ever
+winning. Same expected value. Opposite shape.
+
+---
+
+## What happened in the semis
+
+**Spain 2-0 France.** The tournament favourite is gone — but it knocked *nobody* out
+of the pool, because every last pick was in the other semi.
+
+**Argentina 2-1 England (added time).** England led 1-0 just after half-time, played
+the better football, then sat on the lead with far too long left. 1-1 at 90, done in
+added time.
+
+**Matty and Hasan are out.** The two best hands in the competition — **27.9% EV
+each, double the field, 55.9% to cash** — walk away with **nothing.**
+
+They were the only two who refused to hedge: England on the pitch *and* England in
+the pool. Everyone else bought insurance against their own heartbreak by backing
+Argentina. Those two underwrote it. **The claim came in.** They lost twice in one
+evening, exactly as the model said they would — and the premium they were collecting
+was real right up until the moment it wasn't. That's what underwriting is.
+
+---
+
+## The endgame is absurd, and it's the rule change's fault
+
+**FINAL: Spain v Argentina.** *(Spain 58.5%)*
+**PLAYOFF: France v England.** *(France 63.7%)*
+
+> **All four survivors burned Argentina in the semi. Nobody can pick it.**
+> Only Huw holds Spain. **So the World Cup Final is a sideshow that three of the four
+> can't even bet on — and this pool will be decided by the third-place playoff.**
+
+A Last Man Standing World Cup pool, settled by the dead rubber. Called it two weeks
+ago: merging the playoff into the final round doesn't tweak the game, it replaces it.
+
+---
+
+## Both remaining decisions are solved
+
+There's no guesswork left in the maths — **both men have a strictly dominant move**,
+best regardless of what the other does:
+
+| | Malley: **France** | Malley: **England** |
 |--|--|--|
-| **England** | **Matty, Hasan** | **55.9%** *(the favourite)* |
-| **Argentina** | **Huw, Malley, Conrad, Andrea** | **44.1%** *(the underdog)* |
-| France / Spain | *nobody* | — |
+| **Huw: France** | Huw 25.0 / win 0 · Mal 25.0 / win 0 | Huw 21.2 / 0 · **Mal 36.3 / 36.3** |
+| **Huw: Spain** | **Huw 34.3 / 21.2** · Mal 21.9 / 0 | Huw 23.0 / 0 · **Mal 25.7 / 15.1** |
 
-**Four of six backed the underdog and left the favourite to two men.** Nobody took
-France or Spain, so that semi-final eliminates *nobody*. The entire competition now
-hangs on one match: **England v Argentina.**
-
----
-
-## The board
-
-| Player | Semi | Final round | **EV** | **Cash (any win)** | **WIN outright** |
-|--|--|--|--|--|--|
-| **Matty** | England | France *(forced)* | **27.9%** | **55.9%** | **0.0%** |
-| **Hasan** | England | France *(forced)* | **27.9%** | **55.9%** | **0.0%** |
-| **Malley** | Argentina | **England** | 13.1% | 18.6% | **10.4%** |
-| **Huw** | Argentina | France/Spain | 11.6% | 25.6% | 4.7% |
-| Conrad | Argentina | France *(forced)* | 9.7% | 29.1% | 0.0% |
-| Andrea | Argentina | France *(forced)* | 9.7% | 29.1% | 0.0% |
-
-**P(anyone wins outright) = 15.1%. P(the pot splits) = 84.9%.**
+- **Malley → England.** Better in both columns (36.3 vs 25.0; 25.7 vs 21.9). It is
+  *not* a brave gamble against a safe option — **France is simply the worse pick on
+  every axis**, and England is his only path to winning.
+- **Huw → Spain.** Better in both columns (34.3 vs 25.0; 23.0 vs 21.2). The market's
+  strong Spain price is what flipped this — on our own model's numbers he'd have gone
+  back to France.
 
 ---
 
-## Why they all took Argentina — and it isn't stupidity
+## How it ends — four worlds, one champion
 
-I got this badly wrong. I had you down as a field of Englishmen who'd never touch
-Argentina, and I built that into the model as a *penalty*. Four of you took them.
+| Playoff | Final | Chance | Result |
+|--|--|--|--|
+| France | Spain | 37.2% | Huw, Conrad, Andrea — **3-way split** |
+| France | Argentina | 26.4% | Conrad, Andrea — **2-way split** |
+| England | Spain | 21.2% | Huw, Malley — **2-way split** |
+| **England** | **Argentina** | **15.1%** | **Malley — TAKES THE LOT** |
 
-Here's what I missed: **the bias didn't vanish, it inverted — because Argentina are
-now the team standing in England's way.** "Anti-Argentina" never meant *"I won't pick
-Argentina."* It meant *"I want England to win."* And once Argentina are England's
-opponent, backing them becomes **insurance against your own heartbreak**:
-
-- **England win** → you're out of the pool, but England are in the World Cup Final
-  and you're in the pub. Who cares.
-- **Argentina win** → you're gutted... **but you've advanced, and you're getting paid.**
-
-**You cannot have a bad night.** That's not irrational — it's a hedge. The payoff
-isn't money, it's *money plus football*. Four of you laid off your emotional risk.
-You are not maximising winnings. **You are minimising regret.**
-
-Which makes **Matty and Hasan** the only un-hedged men in the competition: England on
-the pitch *and* England in the pool. If England win, they get the Final **and** half
-the pot. If England lose, they lose **twice in one evening** — knocked out and
-heartbroken.
-
-And that is precisely why they now hold the two best hands. **The pool is paying them
-a fat premium for carrying the risk everyone else handed off.** A pool of football
-fans, it turns out, is an insurance market — and the un-hedged are the underwriters.
+**There is exactly one road to a champion: England beat France in the playoff, AND
+Argentina beat Spain in the final. 15.1%.** Every other road ends in a handshake.
 
 ---
 
-## The men who cannot lose, and cannot win
+## Two stories to finish on
 
-**Matty and Hasan lead on 27.9% each — double the rest of the field.** And it's better
-than that: **if England win, they are the only two survivors.** Both are then forced
-onto France for the final round, holding identical hands — perfect clones. France wins
-its match, they both go through; France loses, the all-lose rule saves them both.
-**Either way they are joint winners: half the pot each, guaranteed.**
+**Conrad and Andrea have arrived.** Rooted to the bottom since the Round of 32, never
+once given a choice, mathematically incapable of winning — and they finish **second
+on 25.6%, ahead of Huw, level with Malley.** After a fortnight of strategy, the
+passengers matched the pilots. Their entire campaign was decided by burns they made
+in the first round.
 
-**A 55.9% chance of banking half the pot with certainty. And a 0.0% chance of ever
-lifting it.**
+**Huw's best move wins him nothing.** Spain is correct — and it's worth **23.0% EV
+and a 0.0% chance of the pot.** He can never be alone, because the playoff *always*
+spits out a survivor beside him: France carries Conrad and Andrea through, or England
+carries Malley. One of them always lives. **The man who spent this tournament
+engineering solitude — arming the Spain landmine, breaking the herd in the quarters —
+has ended up somewhere solitude is mathematically unreachable.** His best play now is
+to maximise his slice of someone else's split.
 
-The two best hands in the competition are mathematically incapable of winning it.
-
----
-
-## Huw's first mistake
-
-He has been the story of this tournament — the man who broke the herd in the quarters
-and armed a landmine nobody else could see. And now, in the semi, **he has joined a
-herd.**
-
-Abandoning France for Argentina cost him twice: a **worse gate** (44.1% vs France's
-59.2%) *and* a **crowded camp**. It took him from **EV 20.3% / 14.7% to win** down to
-**11.6% / 4.7%**. He is not dead — he still holds **France and Spain**, so he can
-still defect in the final round — but the lonely lane that made him favourite is gone.
-
----
-
-## Malley is now the most likely winner — but only if he does one thing
-
-The crowd walked into **his** camp, which made his **England card** the only real
-defection left on the board. He now has the best chance of anyone of actually
-**winning** this: **10.4%.**
-
-**But it evaporates if he plays France in the final round.**
-
-| Malley's final-round card | EV | **WIN** |
-|--|--|--|
-| **England** | **13.1%** | **10.4%** |
-| France | 11.0% | **0.0%** |
-
-**England is better on both counts.** With Conrad and Andrea already nailed to France
-beside him, playing France just makes him a third clone for no gain whatsoever.
-
-Note the inversion, because it's the whole lesson of this pool: **Malley has the
-*worst* chance of getting paid (18.6%) and the *best* chance of winning (10.4%).** He
-is the only one who has stopped playing for a receipt.
-
----
-
-## What this one match decides
-
-- **England win (55.9%)** → only Matty and Hasan survive. Guaranteed 2-way split. The
-  competition is effectively over the moment the whistle goes.
-- **Argentina win (44.1%)** → Huw, Malley, Conrad and Andrea go through to a live
-  four-way scramble, and it becomes the **only branch in which anybody can win
-  outright.**
-
-Everyone still gets paid *somewhere*. But **84.9% of the time, nobody wins.**
+And the pool's only champion, if there is one, needs **England to beat France in a
+game nobody wants to play.** The same England that just knocked out Matty and Hasan.
 
 ---
 
@@ -136,12 +120,12 @@ Everyone still gets paid *somewhere*. But **84.9% of the time, nobody wins.**
 
 | Player | R32 | R16 | QF | SF | Final round |
 |--|--|--|--|--|--|
-| Huw | USA | Morocco | England | **Argentina** | France or Spain |
-| Malley | Belgium | Morocco | Spain | **Argentina** | France or **England** |
-| Matty | Argentina | Morocco | Spain | **England** | France *(forced)* |
-| Hasan | USA | Argentina | Spain | **England** | France *(forced)* |
-| Conrad | England | Morocco | Spain | **Argentina** | France *(forced)* |
-| Andrea | England | Morocco | Spain | **Argentina** | France *(forced)* |
+| Huw | USA | Morocco | England | Argentina | **Spain** *(final)* |
+| Malley | Belgium | Morocco | Spain | Argentina | **England** *(playoff)* |
+| Conrad | England | Morocco | Spain | Argentina | **France** *(forced)* |
+| Andrea | England | Morocco | Spain | Argentina | **France** *(forced)* |
+| Matty | Argentina | Morocco | Spain | England ✗ | — |
+| Hasan | USA | Argentina | Spain | England ✗ | — |
 | Andy W | Argentina | Mexico ✗ | — | — | — |
 | Mr T | Egypt | USA ✗ | — | — | — |
 | Georgie B | Germany ✗ | — | — | — | — |
@@ -159,23 +143,26 @@ top harvest. Smarshy and Georgie B out; JP never picked.
 USA → **Mr T out**. Argentina 3-2 Egypt from two down → **Hasan survives**. Switzerland
 beat Colombia on pens.
 
-**Quarter-finals (6 → 6 — everyone through).** France 2-0 Morocco. Spain beat Belgium.
-**England 2-1 Norway (a.e.t.)** → Huw's gamble comes off. Argentina beat Switzerland.
+**Quarter-finals (6 → 6).** France 2-0 Morocco. Spain beat Belgium. **England 2-1
+Norway (a.e.t.)** — Huw's contrarian gamble comes off. Argentina beat Switzerland.
 
-**Semi-finals:** to play.
+**Semi-finals (6 → 4).** **Spain 2-0 France** — the favourite falls, but nobody's
+pick was in that game. **Argentina 2-1 England (a.e.t.)** → **Matty and Hasan out.**
+
+**Final round:** Spain v Argentina, and France v England, played together.
 
 ---
 
 ## The honest caveat
 
-A big slice of everyone's EV now runs **through the third-place playoff**, and the
-model prices that game purely on team strength. In reality it's the most
-motivation-distorted fixture in football — tired legs, no glory, nobody wants to be
-there. **The model cannot see any of that.** Treat every playoff-dependent number here
-as the least trustworthy on the board.
+The pot now hinges on **France v England in the third-place playoff**, and the model
+prices that game purely on team strength. In reality it's the most
+motivation-distorted fixture in football: tired legs, no glory, nobody wants to be
+there. **The model cannot see any of that.** The single most important number in this
+document is also the least trustworthy one.
 
 ## How the model works
 Bradley-Terry strengths fitted to the vig-free market (match odds + outrights); the
-endgame is then solved **exactly** — every world enumerated, no Monte Carlo — as a
-game, with best-response iteration to equilibrium. See `endgame_solve.py`,
-`endgame_outcomes.py`, `objectives.py`.
+endgame solved **exactly** — every world enumerated, no Monte Carlo — as a game, with
+best-response iteration to equilibrium. Final round calibrated to France 1.57 and
+Spain 1.71. See `endgame_solve.py`, `endgame_outcomes.py`, `objectives.py`.
